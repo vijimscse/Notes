@@ -9,7 +9,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Database(entities = arrayOf(Note::class), version = 1, exportSchema = false)
-public abstract class NoteDatabase : RoomDatabase() {
+abstract class NoteDatabase : RoomDatabase() {
     abstract fun noteDao(): NoteDao
 
     private class NoteDatabaseCallback(
@@ -20,7 +20,13 @@ public abstract class NoteDatabase : RoomDatabase() {
             super.onOpen(db)
             INSTANCE?.let { database ->
                 scope.launch {
-                    populateDatabase(database.noteDao())
+                    var note = Note("Title1", "Desc1")
+                    val noteDao = database.noteDao()
+                    noteDao.addNote(note)
+                    note = Note("Title2", "Desc2")
+                    noteDao.addNote(note)
+                    note = Note("Title3", "Desc3")
+                    noteDao.addNote(note)
                 }
             }
         }
@@ -36,7 +42,6 @@ public abstract class NoteDatabase : RoomDatabase() {
             noteDao.addNote(note)
             note = Note("Title3", "Desc3")
             noteDao.addNote(note)
-            // TODO: Add your own words!
         }
     }
 

@@ -9,5 +9,5 @@ data class Note(@ColumnInfo(name = "title") var title: String,
                 @ColumnInfo(name = "description") var description : String) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id: Int = -1
+    var id: Int = 0
 }
