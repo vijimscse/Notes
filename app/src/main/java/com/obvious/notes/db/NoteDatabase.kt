@@ -20,27 +20,23 @@ abstract class NoteDatabase : RoomDatabase() {
             super.onOpen(db)
             INSTANCE?.let { database ->
                 scope.launch {
-                    var note = Note("Title1", "Desc1")
-                    val noteDao = database.noteDao()
-                    noteDao.addNote(note)
-                    note = Note("Title2", "Desc2")
-                    noteDao.addNote(note)
-                    note = Note("Title3", "Desc3")
-                    noteDao.addNote(note)
+                    populateDatabase(database.noteDao())
                 }
             }
         }
 
         suspend fun populateDatabase(noteDao: NoteDao) {
             // Delete all content here.
-            //noteDao.deleteAll()
+            noteDao.deleteAll()
 
             // Add sample words.
-            var note = Note("Title1", "Desc1")
+            var note = Note("Office", "1. Plan for design document contents and diagrams\n" +
+                    "2. 10 AM - Scrum - Discuss on board meeting points" +
+                    "3. Performance appraisal - meetings with team from 2 to 4PM")
             noteDao.addNote(note)
-            note = Note("Title2", "Desc2")
-            noteDao.addNote(note)
-            note = Note("Title3", "Desc3")
+            note = Note("Home", "1. Check Medicines\n" +
+                    "2. Go for checkup\n" +
+                    "3. 10 PM Movie")
             noteDao.addNote(note)
         }
     }

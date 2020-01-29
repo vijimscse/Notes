@@ -3,5 +3,6 @@
     <string name="hint_title">Title...</string>
     <string name="hint_description">Description...</string>
     <string name="button_save">Save</string>
-    <string name="empty_not_saved">Note is not saved because fields are empty.</string>
+    <string name="empty_not_saved">Fields cannot be empty.</string>
+    <string name="add_a_note">Add a note</string>
 </resources>
