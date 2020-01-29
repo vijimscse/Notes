@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 class NoteViewModel(application: Application) : AndroidViewModel(application) {
     // The ViewModel maintains a reference to the repository to get data.
     private val repository: NoteRepository
-    // LiveData gives us updated words when they change.
+    // LiveData gives us updated notes when they change.
     val allNotes: LiveData<List<Note>>
 
     init {

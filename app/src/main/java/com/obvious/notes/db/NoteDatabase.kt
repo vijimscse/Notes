@@ -29,7 +29,7 @@ abstract class NoteDatabase : RoomDatabase() {
             // Delete all content here.
             noteDao.deleteAll()
 
-            // Add sample words.
+            // Add sample notes.
             var note = Note("Office", "1. Plan for design document contents and diagrams\n" +
                     "2. 10 AM - Scrum - Discuss on board meeting points" +
                     "3. Performance appraisal - meetings with team from 2 to 4PM")

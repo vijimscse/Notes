@@ -12,7 +12,7 @@ class NoteListAdapter internal constructor(context: Context) :
     RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>(){
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private var notes = emptyList<Note>() // Cached copy of words
+    private var notes = emptyList<Note>() // Cached copy of notes
 
     inner class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleView: TextView = itemView.findViewById(R.id.title)

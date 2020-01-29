@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,7 +14,7 @@ import com.obvious.notes.db.Note
 class MainActivity : AppCompatActivity() {
     private lateinit var noteViewModel: NoteViewModel
     private lateinit var adapter: NoteListAdapter
-    private val newWordActivityRequestCode = 1
+    private val newNoteActivityRequestCode = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,25 +31,25 @@ class MainActivity : AppCompatActivity() {
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
             val intent = Intent(this@MainActivity, NewNoteActivity::class.java)
-            startActivityForResult(intent, newWordActivityRequestCode)
+            startActivityForResult(intent, newNoteActivityRequestCode)
         }
     }
 
     private fun observeNotes() {
-        noteViewModel.allNotes.observe(this, Observer { words ->
+        noteViewModel.allNotes.observe(this, Observer { notes ->
             // Update the cached copy of the notes in the adapter.
-            words?.let { adapter.setNotes(it) }
+            notes?.let { adapter.setNotes(it) }
         })
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == newWordActivityRequestCode &&
+        if (requestCode == newNoteActivityRequestCode &&
             resultCode == Activity.RESULT_OK && data != null) {
-            val word = Note(data.getStringExtra(NewNoteActivity.EXTRA_TITLE),
+            val note = Note(data.getStringExtra(NewNoteActivity.EXTRA_TITLE),
                 data.getStringExtra(NewNoteActivity.EXTRA_DESCRIPTION))
-            noteViewModel.insert(word)
+            noteViewModel.insert(note)
         }
     }
 }
