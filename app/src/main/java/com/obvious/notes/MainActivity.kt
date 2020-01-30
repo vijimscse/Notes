@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.obvious.notes.db.Note
@@ -27,8 +28,13 @@ class MainActivity : AppCompatActivity(), NoteListFragment.OnFragmentInteraction
         }
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
+
             val intent = Intent(this@MainActivity, NewNoteActivity::class.java)
             startActivityForResult(intent, newNoteActivityRequestCode)
+            var fragment: Fragment? = supportFragmentManager.findFragmentById(R.id.fragment_container)
+            if (fragment is NoteDetailFragment) {
+                supportFragmentManager.popBackStack()
+            }
         }
     }
 
