@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="@dimen/small_padding"
-    android:layout_marginStart="@dimen/big_padding"
-    android:layout_marginEnd="@dimen/big_padding"
-    android:layout_marginTop="@dimen/small_padding"
-    android:layout_marginBottom="@dimen/small_padding"
-    android:elevation="@dimen/small_padding">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3"
+    android:background="@android:color/white"
+    android:padding="@dimen/big_padding">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="@dimen/big_padding"
+    <TextView
+        android:id="@+id/title"
+        android:fontFamily="sans-serif-condensed"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:textSize="@dimen/detail_title_text"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textStyle="bold"
+        android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/title"
-            style="@style/note_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/description"
-            style="@style/note_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_height="0dp"
+        android:lineSpacingExtra="@dimen/desc_line_spacing"
+        android:textSize="@dimen/detail_description_text"
+        android:fontFamily="sans-serif-light"
+        android:textAppearance="@android:style/TextAppearance.Small"
+        android:layout_weight="1.5"/>
 
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</LinearLayout>

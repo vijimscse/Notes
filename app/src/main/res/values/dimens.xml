@@ -3,4 +3,6 @@
     <dimen name="small_padding">6dp</dimen>
     <dimen name="big_padding">16dp</dimen>
     <dimen name="desc_line_spacing">6dp</dimen>
+    <dimen name="detail_title_text">20sp</dimen>
+    <dimen name="detail_description_text">16sp</dimen>
 </resources>

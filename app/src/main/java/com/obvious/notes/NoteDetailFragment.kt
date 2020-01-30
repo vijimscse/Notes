@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.obvious.notes.db.Note
+import kotlinx.android.synthetic.main.fragment_note_detail.*
+import kotlinx.android.synthetic.main.fragment_note_detail.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,6 +35,13 @@ class NoteDetailFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_note_detail, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        title.text = note?.title
+        description.text = note?.description
     }
 
     companion object {
