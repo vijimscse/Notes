@@ -8,13 +8,22 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.obvious.notes.db.Note
 
-class NoteListAdapter internal constructor(context: Context) :
+class NoteListAdapter(
+    context: Context,
+    var listener: NoteListFragment.OnFragmentInteractionListener?
+) :
     RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>(){
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var notes = emptyList<Note>() // Cached copy of notes
 
     inner class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        init {
+            itemView.setOnClickListener {
+                listener?.onFragmentInteraction(notes[adapterPosition])
+            }
+        }
         val titleView: TextView = itemView.findViewById(R.id.title)
         val descriptionView: TextView = itemView.findViewById(R.id.description)
     }
