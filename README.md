@@ -4,14 +4,14 @@ Notes is a basic application developed for Android users who can take notes of p
 
 One can merely add a note, view the list of notes and note detail. Hence it has 3 screens. 
 
-Add a note
-View notes
-View a note detail
+1. Add a note
+2. View notes
+3. View a note detail
 
 Details are below: 
 
-Add a note
-----------
+1.Add a note
+------------
 This screen lets the user add a note. 
  Title - Title has 100 characters long limit
  Description - No limit on this field.
@@ -20,16 +20,17 @@ On clicking Save, None of the fields can be empty. Validation is applied on abov
 	
 ![](screenshots/screenshot_1.png)
 
-View notes
-----------
+2.View notes
+------------
 This is the app landing page. One can see the list of notes created in chronological order(latest created first). App is preloaded with some sample contents. 
 ![](screenshots/screenshot_2.png)
 
 
-Note detail
------------
+3.Note detail
+-------------
 On tapping a note, note details screen is displayed. 
 ![](screenshots/screenshot_3.png)
+
 
 
 Setup Instructions:
