@@ -20,6 +20,8 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
         val noteDao = NoteDatabase.getDatabase(application, viewModelScope).noteDao()
         repository = NoteRepository(noteDao)
         allNotes = repository.getAllNotes()
+
+        viewModelScope.launch {  }
     }
 
     /**

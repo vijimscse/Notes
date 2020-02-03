@@ -16,7 +16,7 @@
         android:id="@+id/edit_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="150dp"
+        android:minHeight="@dimen/description_box_min_height"
         android:hint="@string/hint_description"
         style="@style/editDescription"
         android:padding="@dimen/small_padding" />
@@ -25,7 +25,7 @@
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button"
+        android:background="@drawable/button_background"
         android:text="@string/button_save"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"

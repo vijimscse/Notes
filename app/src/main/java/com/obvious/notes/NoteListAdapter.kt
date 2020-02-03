@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.obvious.notes.db.Note
+import com.obvious.notes.utils.DateUtils
 
 class NoteListAdapter(
-    context: Context,
+    var context: Context,
     var listener: NoteListFragment.OnFragmentInteractionListener?
 ) :
     RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>(){
@@ -26,6 +27,7 @@ class NoteListAdapter(
         }
         val titleView: TextView = itemView.findViewById(R.id.title)
         val descriptionView: TextView = itemView.findViewById(R.id.description)
+        val dateView: TextView = itemView.findViewById(R.id.createdDate)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
@@ -39,11 +41,12 @@ class NoteListAdapter(
         val note = notes[position]
         holder.titleView.text = note.title
         holder.descriptionView.text = note.description
+        holder.dateView.text = context.getString(R.string.created_text) + " " +
+                DateUtils.toSimpleString(note.createdTime)
     }
 
     internal fun setNotes(notes: List<Note>) {
         this.notes = notes
         notifyDataSetChanged()
     }
-
 }

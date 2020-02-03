@@ -5,4 +5,6 @@
     <dimen name="desc_line_spacing">6dp</dimen>
     <dimen name="detail_title_text">20sp</dimen>
     <dimen name="detail_description_text">16sp</dimen>
+    <dimen name="description_box_min_height">150dp</dimen>
+    <dimen name="no_size">0dp</dimen>
 </resources>

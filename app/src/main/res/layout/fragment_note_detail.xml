@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="3"
     android:background="@android:color/white"
@@ -9,7 +10,7 @@
 
     <TextView
         android:id="@+id/title"
-        android:fontFamily="sans-serif-condensed"
+        app:fontFamily="sans-serif-condensed"
         android:layout_width="match_parent"
         android:textSize="@dimen/detail_title_text"
         android:textAppearance="@android:style/TextAppearance.Medium"
@@ -21,10 +22,10 @@
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/big_padding"
         android:layout_marginLeft="@dimen/big_padding"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/no_size"
         android:lineSpacingExtra="@dimen/desc_line_spacing"
         android:textSize="@dimen/detail_description_text"
-        android:fontFamily="sans-serif-light"
+        app:fontFamily="sans-serif-light"
         android:textAppearance="@android:style/TextAppearance.Small"
         android:layout_weight="1.5"/>
 
