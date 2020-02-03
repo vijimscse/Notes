@@ -6,7 +6,6 @@
     <string name="empty_not_saved">Fields cannot be empty.</string>
     <string name="add_a_note">Add a note</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="created_text">Created on</string>
+    <string name="max_characters_long">Max. 100 characters long</string>
 </resources>

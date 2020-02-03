@@ -12,6 +12,14 @@
         android:padding="@dimen/small_padding"
         style="@style/editTitle" />
 
+    <TextView
+        android:id="@+id/characterLengthLimitText"
+        style="@style/characterLengthLimit"
+        android:visibility="gone"
+        android:text="@string/max_characters_long"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/edit_description"
         android:layout_width="match_parent"

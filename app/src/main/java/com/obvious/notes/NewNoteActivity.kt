@@ -4,11 +4,17 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.view.MenuItem
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import kotlinx.android.synthetic.main.note_item.*
 
 class NewNoteActivity : AppCompatActivity() {
@@ -19,6 +25,7 @@ class NewNoteActivity : AppCompatActivity() {
 
     private lateinit var editTitleView: EditText
     private lateinit var editDescriptionView: EditText
+    private lateinit var errorTitleLengthView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +35,24 @@ class NewNoteActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true)
         editTitleView = findViewById(R.id.edit_title)
         editDescriptionView = findViewById(R.id.edit_description)
+        errorTitleLengthView = findViewById(R.id.characterLengthLimitText)
 
+        editTitleView.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {}
+
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                //Show max limit text
+                errorTitleLengthView.visibility = if (s.length >
+                    resources.getInteger(R.integer.max_title_limit)) VISIBLE else GONE
+
+            }
+        })
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
             val replyIntent = Intent()

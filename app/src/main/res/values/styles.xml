@@ -36,6 +36,7 @@
         <item name="android:layout_marginBottom">8dp</item>
         <item name="android:paddingLeft">16dp</item>
         <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:maxLength">@integer/max_title_limit</item>
         <item name="android:inputType">textAutoComplete</item>
         <item name="android:background">@drawable/text_box_background</item>
         <item name="android:textColor">@android:color/black</item>
@@ -69,5 +70,14 @@
         <item name="android:lineSpacingExtra">@dimen/desc_line_spacing</item>
         <item name="android:textSize">11sp</item>
         <item name="android:gravity">right|center_vertical</item>
+    </style>
+
+    <style name="characterLengthLimit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:lineSpacingExtra">@dimen/desc_line_spacing</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:gravity">left|top</item>
     </style>
 </resources>
