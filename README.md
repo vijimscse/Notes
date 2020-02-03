@@ -1,4 +1,5 @@
 Notes
+======
 Notes is a basic application developed for Android users who can take notes of personal, official and save it for their future reminders.
 
 One can merely add a note, view the list of notes and note detail. Hence it has 3 screens. 
