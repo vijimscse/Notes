@@ -1,5 +1,3 @@
-# Notes
-Notes is an Android application to create and view notes. 
 Notes
 Notes is a basic application developed for Android users who can take notes of personal, official and save it for their future reminders.
 
