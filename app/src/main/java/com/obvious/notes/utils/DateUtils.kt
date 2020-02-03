@@ -6,7 +6,7 @@ import java.util.*
 object DateUtils {
     @JvmStatic
     fun toSimpleString(date: Date) : String {
-        val format = SimpleDateFormat("dd/MM/yyy HH:mm")
+        val format = SimpleDateFormat("dd MMMM yyyy hh:mm aa")
 
         return format.format(date)
     }
