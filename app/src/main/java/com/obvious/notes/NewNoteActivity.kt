@@ -14,8 +14,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
-import kotlinx.android.synthetic.main.note_item.*
 
 class NewNoteActivity : AppCompatActivity() {
     companion object {
